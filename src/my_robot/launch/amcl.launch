@@ -6,6 +6,7 @@
 
   <!-- AMCL -->
   <node name="amcl" pkg="amcl" type="amcl" output="screen">
+    <!-- <remap from="scan" to="my_robot/laser/scan" /> -->
     <!-- Filter -->
     <param name="min_particles" value="100" />
     <param name="max_particles" value="800" />
@@ -35,6 +36,7 @@
 
   <!-- Move Base -->
   <node name="move_base" pkg="move_base" type="move_base" respawn="false" output="screen">
+    <!-- <remap from="scan" to="my_robot/laser/scan" /> -->
     <param name="base_global_planner" value="navfn/NavfnROS" />
     <param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS"/>
 

@@ -118,6 +118,9 @@
     </visual>
   </link>
 
+  <link name="optical_camera">
+  </link>
+
   <link name="hokuyo">
     <pose>0 0 0 0 0 0</pose>
     <inertial>
@@ -176,6 +179,12 @@
     <parent link="chassis" />
     <child link="hokuyo" />
     <axis xyz="0 1 0" rpy="0 0 0" />
+  </joint>
+
+  <joint name="optical_camera_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="-1.5707 0 -1.5707" />
+    <parent link="camera" />
+    <child link="optical_camera" />
   </joint>
 
 <!-- GAZEBO ELEMENTS -->

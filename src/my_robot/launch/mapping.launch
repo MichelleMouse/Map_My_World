@@ -6,16 +6,17 @@
   <arg name="depth_topic" default="/depth/image"/>
   <arg name="camera_info_topic" default="/rgb/camera_info"/>
   <arg name="database_path" default="$(find my_robot)/rtabMap/rtabmap.db"/>
-    <!-- Mapping Node -->
+
+  <!-- Mapping Node -->
   <!-- <group ns="rtabmap"> -->
     <node name="rtabmap" pkg="rtabmap_ros" type="rtabmap" output="screen" args="--delete_db_on_start">
 
       <!-- RTAB-Map Inputs -->
       <remap from="scan" to="/scan"/>
-      <remap from="/camera/rgb/image_raw" to="$(arg rgb_topic)"/>
-      <remap from="/camera/depth/image_raw" to="$(arg depth_topic)"/>
-      <remap from="/camera/rgb/camera_info" to="$(arg camera_info_topic)"/>
-      <remap from="/odom" to="/rtabmap/odom"/>
+      <remap from="/camera/camera/rgb/image_raw" to="$(arg rgb_topic)"/>
+      <remap from="/camera/camera/depth/image_raw" to="$(arg depth_topic)"/>
+      <remap from="/camera/camera/rgb/camera_info" to="$(arg camera_info_topic)"/>
+      <!-- <remap from="/odom" to="/rtabmap/odom"/> -->
       <remap from="/map" to="/rtabmap/mapData"/>
 
       <!-- Basic RTAB-Map Parameters -->
